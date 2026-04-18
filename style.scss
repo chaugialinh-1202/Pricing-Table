@@ -1,0 +1,81 @@
+$primary-blue: #3498db;
+$highlight-blue: #ebf5fb;
+$border-color: #ddd;
+
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+  background-color: #f8f9fa;
+
+  .pricing-card {
+    background: #fff;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    padding: 40px 20px;
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease; // Tạo hiệu ứng mượt mà khi hover
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+    h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+      transition: font-weight 0.2s ease; // Hiệu ứng cho chữ đậm lên
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      span { font-size: 1rem; color: #7f8c8d; font-weight: normal; }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        color: #666;
+        &:last-child { border-bottom: none; }
+      }
+    }
+
+    button {
+      background-color: $primary-blue;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    &:nth-child(2) {
+      background-color: $highlight-blue; 
+      border-color: $primary-blue;
+      transform: scale(1.05); 
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+      h3 { color: darken($primary-blue, 15%); }
+      button { background-color: darken($primary-blue, 10%); }
+    }
+
+    &:hover {
+      border-color: $primary-blue; 
+      
+      h3 {
+        font-weight: 900; 
+        color: $primary-blue;
+      }
+      
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+  }
+}
